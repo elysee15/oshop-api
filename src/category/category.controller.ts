@@ -26,11 +26,6 @@ export class CategoryController {
     return await this.categoryService.findOne(id);
   }
 
-  @Delete('/:id')
-  async deleteCategory(@Param('id', ParseIntPipe) id: number) {
-    return await this.categoryService.remove(id);
-  }
-
   @Post('/')
   async createCategory(@Body() categoryDto: CreateCategoryDto) {
     console.log(categoryDto instanceof CreateCategoryDto);
@@ -50,6 +45,14 @@ export class CategoryController {
       data: await this.categoryService.update(id, categoryDto),
       message: `Category #id updated`,
       status_code: HttpStatus.OK,
+    };
+  }
+
+  @Delete('/:id')
+  async deleteCategory(@Param('id', ParseIntPipe) id: number) {
+    return {
+      data: await this.categoryService.remove(id),
+      message: 'Product deleted',
     };
   }
 }
