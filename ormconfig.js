@@ -4,9 +4,9 @@ module.exports = {
   port: 5432,
   username: 'postgres',
   password: 'root',
-  database: 'postgres',
-  entities: ['dist/**/*.entity.js'],
-  migrations: ['dist/migrations/*.js'],
+  database: 'bleu_app_db',
+  entities: ["src/**/*.entity{.ts,.js}"],
+  migrations: ['src/migrations/*{.ts,.js}'],
   cli: {
     migrationsDir: 'src/migrations',
   },
