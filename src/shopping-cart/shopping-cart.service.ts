@@ -1,6 +1,5 @@
 import { Repository } from 'typeorm';
 import { Injectable } from '@nestjs/common';
-import { CreateShoppingCartDto } from './dto/create-shopping-cart.dto';
 import { ShoppingCart } from './entities/shopping-cart.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -11,7 +10,7 @@ export class ShoppingCartService {
     private shoppingCartRepository: Repository<ShoppingCart>,
   ) {}
 
-  async create(createShoppingCartDto: CreateShoppingCartDto) {
+  async create(createShoppingCartDto) {
     const shoppingCart = this.shoppingCartRepository.create(
       createShoppingCartDto,
     );

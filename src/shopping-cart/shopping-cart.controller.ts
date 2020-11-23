@@ -14,19 +14,19 @@ import { CreateShoppingCartDto } from './dto/create-shopping-cart.dto';
 export class ShoppingCartController {
   constructor(private readonly shoppingCartService: ShoppingCartService) {}
 
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    return await this.shoppingCartService.findOne(+id);
+  }
+
   @Post()
   create(@Body() createShoppingCartDto: CreateShoppingCartDto) {
     return this.shoppingCartService.create(createShoppingCartDto);
   }
 
   @Get()
-  findAll() {
+  async findAll() {
     return this.shoppingCartService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.shoppingCartService.findOne(+id);
   }
 
   @Put(':id')

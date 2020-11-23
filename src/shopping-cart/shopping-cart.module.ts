@@ -1,3 +1,4 @@
+import { Product } from './../product/product.entity';
 import { ShoppingCart } from './entities/shopping-cart.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';

@@ -6,13 +6,9 @@ import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-<<<<<<< HEAD
 import { UserController } from './auth/user.controller';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
-=======
-import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
->>>>>>> Feat: add shopping cart module
 
 @Module({
   imports: [
@@ -29,11 +25,7 @@ import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
     }),
     ProductModule,
     CategoryModule,
-<<<<<<< HEAD
     AuthModule,
-=======
-    ShoppingCartModule,
->>>>>>> Feat: add shopping cart module
   ],
   controllers: [],
   providers: [],

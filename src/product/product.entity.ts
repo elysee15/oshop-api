@@ -1,8 +1,10 @@
+import { ShoppingCart } from './../shopping-cart/entities/shopping-cart.entity';
 import { Category } from './../category/category.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -31,9 +33,12 @@ export class Product {
   @Column({ nullable: true })
   imageUrl: string;
 
-  @CreateDateColumn({ nullable: true })
+  @CreateDateColumn()
   created_at: Date;
 
-  @UpdateDateColumn({ nullable: true })
+  @UpdateDateColumn()
   updated_at: Date;
+
+  @ManyToMany(() => ShoppingCart, (shoppingCart) => shoppingCart.product)
+  shoppingCart: ShoppingCart[];
 }
